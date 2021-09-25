@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  sakila_mysql:
+    image: "mysql:8.0.26"
+    container_name: "sakila_db"
+    restart: "always"
+    environment:
+      MYSQL_ROOT_PASSWORD: "Letmein123!"
+    ports:
+      - "3309:3306"
+    expose:
+      - "3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/:ro
+

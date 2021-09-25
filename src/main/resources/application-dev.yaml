@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3309/sakila
+    username: root
+    password: Letmein123!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    open-in-view: false
+
+  application:
+    name: DVD Rental Store
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+  web:
+    resources:
+      add-mappings: false
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /sakila
+
+  error:
+    whitelabel:
+      enabled: false
+
+logging:
+  file:
+    name: logs/message.log
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger/ui.html
+  api-docs:
+    path: /swagger/v3/docs
+
+
+application:
+  name: ${spring.application.name}
+  version: 1.0.0
+  description: A DVD Rental Store based on the sakila sample database
+
