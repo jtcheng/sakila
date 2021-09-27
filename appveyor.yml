@@ -1,0 +1,27 @@
+version: 1.0.{build}
+stack: jdk 11
+environment:
+  matrix:
+    - job_name: Linux build
+      appveyor_build_worker_image: Ubuntu2004
+
+matrix:
+  fast_finish: true
+
+for:
+  -
+    matrix:
+      only:
+        - job_name: Linux build
+
+    build_script:
+      - sh: ./gradlew clean build -x test --refresh-dependencies
+
+    before_test:
+      - sh: docker-compose -f compose.yaml up -d
+      - sh: sleep 60
+    test_script:
+      - sh: ./gradlew test
+    after_test:
+      - sh: docker-compose -f compose.yaml down
+
