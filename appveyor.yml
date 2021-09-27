@@ -25,3 +25,12 @@ for:
     after_test:
       - sh: docker-compose -f compose.yaml down
 
+notifications:
+  - provider: Email
+    to:
+      - jtcheng@cn.ibm.com
+      - jtcheng@cqu.edu.cn
+    on_build_success: true
+    on_build_failure: true
+    on_build_status_changed: true
+
