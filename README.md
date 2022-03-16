@@ -6,10 +6,10 @@ I will continuous improvement this project when I'm free.
 
 - Spring Tools 4
 - MySQL 8
-- Java 11
+- Java 17
 - Gradle 7
-- Spring boot 2.5
-- Springdoc 1.5 and Swagger 3
+- Spring boot 2.6
+- Springdoc 1.6 and Swagger 3
 - JUnit 5
 - Lombok 1.8
 - Docker Compose 3

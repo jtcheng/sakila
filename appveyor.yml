@@ -1,5 +1,5 @@
 version: 1.0.{build}
-stack: jdk 11
+stack: jdk 17
 environment:
   matrix:
     - job_name: Linux build
